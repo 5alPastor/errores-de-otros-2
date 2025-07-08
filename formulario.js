@@ -1,14 +1,14 @@
 var formulario = document.querySelector(".formulario");
 
 formulario.onsubmit = function(e) {
-  e.preventDefault(); // corrección: era prevent(), debe ser preventDefault()
+  e.preventDefault(); // correccion de prevent() a preventDefault()
 
   var n = formulario.elements[0];
-  var ed = formulario.elements[1]; // renombré 'e' a 'ed' solo dentro del scope para evitar conflicto con 'e' del evento
+  var ed = formulario.elements[1]; // renombramos 'e' a 'ed' dentro del scope para evitar conflicto con 'e' del evento
   var na = formulario.elements[2];
 
   var nombre = n.value;
-  var edad = Number(ed.value); // conversión necesaria
+  var edad = Number(ed.value); // conversión a numero
 
   var i = na.selectedIndex;
   var nacionalidad = na.options[i].value;
@@ -42,7 +42,7 @@ function agregarInvitado(nombre, edad, nacionalidad) {
   var lista = document.getElementById("lista-de-invitados");
 
   var elementoLista = document.createElement("div");
-  elementoLista.classList.add("elemento-lista"); // corrección: era .added
+  elementoLista.classList.add("elemento-lista"); // corrección era de .added a .add
   lista.appendChild(elementoLista);
 
   function crearElemento(descripcion, valor) {
@@ -72,6 +72,6 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 
   botonBorrar.onclick = function () {
     // this.parentNode.style.display = 'none';
-    botonBorrar.parentNode.remove(); // corrección: usar .remove() directamente
+    botonBorrar.parentNode.remove(); // usamos .remove() directamente para eliminar el div del invitado
   };
 }
